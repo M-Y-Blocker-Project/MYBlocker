@@ -3,7 +3,7 @@ package com.github.MYBlocker;
 import javax.swing.*;
 import java.awt.*;
 
-class PartsMaker extends PathMaker{
+public class PartsMaker extends PathMaker{
 
 
     ImageIcon makeMikamiYua(){
