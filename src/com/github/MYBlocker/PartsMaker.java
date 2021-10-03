@@ -1,46 +1,48 @@
+// Reference
+// https://qiita.com/stu345/items/4b46760e20751a117e84
+
 package com.github.MYBlocker;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class PartsMaker extends PathMaker{
+public class PartsMaker extends PathMaker {
 
-
-    ImageIcon makeMikamiYua(){
+    ImageIcon makeMikamiYua() {
         String MikamiPath = makePath("mentos_tea.jpg");
-        ImageIcon MikaMiPhoto = new ImageIcon(MikamiPath);
-        return(MikaMiPhoto);
+        ImageIcon MikaMiPhoto = new ImageIcon(getClass().getResource(MikamiPath));
+        return (MikaMiPhoto);
     }
 
-    static JButton makeUpperButton(){
+    static JButton makeUpperButton(PartsMaker m) {
         String ButtonPath = makePath("UpperButton.gif");
-        ImageIcon ButtonPhoto = new ImageIcon(ButtonPath);
+        ImageIcon ButtonPhoto = new ImageIcon(m.getClass().getResource(ButtonPath));
         JButton Button = new JButton(ButtonPhoto);
-        return(Button);
+        return (Button);
     }
 
-    static JButton makeLowerButton(){
+    static JButton makeLowerButton(PartsMaker m) {
         String ButtonPath = makePath("LowerButton.png");
-        ImageIcon ButtonPhoto = new ImageIcon(ButtonPath);
+        ImageIcon ButtonPhoto = new ImageIcon(m.getClass().getResource(ButtonPath));
         JButton Button = new JButton(ButtonPhoto);
-        return(Button);
+        return (Button);
     }
 
-    static StartButton makeStartButton(TimeLabel lTimeLabel, TimeLabel cTimeLabel, TimeLabel rTimeLabel){
+    static StartButton makeStartButton(TimeLabel lTimeLabel, TimeLabel cTimeLabel, TimeLabel rTimeLabel) {
         StartButton button = new StartButton();
         button.lTimeLabel = lTimeLabel;
         button.cTimeLabel = cTimeLabel;
         button.rTimeLabel = rTimeLabel;
         button.makeEnable();
-        return(button);
+        return (button);
     }
 
-    static TimeLabel makeTimeLabel(JButton uButton, JButton lButton, int pBase){
-         TimeLabel timeLabel = new TimeLabel();
-         timeLabel.upperButton = uButton;
-         timeLabel.lowerButton = lButton;
-         timeLabel.base = pBase;
-         return(timeLabel);
+    static TimeLabel makeTimeLabel(JButton uButton, JButton lButton, int pBase) {
+        TimeLabel timeLabel = new TimeLabel();
+        timeLabel.upperButton = uButton;
+        timeLabel.lowerButton = lButton;
+        timeLabel.base = pBase;
+        return (timeLabel);
     }
 
     static JPanel makePanel(JButton upperButton, JButton lowerButton, TimeLabel timeLabel) {
