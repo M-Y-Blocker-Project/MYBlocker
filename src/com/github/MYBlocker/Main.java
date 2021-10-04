@@ -9,6 +9,7 @@ public class Main extends ContentsMaker{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setVisible(true);
+        frame.setIconImage(icon.getImage());
         frame.getContentPane().setLayout(new FlowLayout());
         frame.getContentPane().add(lPanel, BorderLayout.WEST);
         frame.getContentPane().add(cPanel, BorderLayout.CENTER);
