@@ -8,9 +8,9 @@ import java.awt.*;
 
 public class PartsMaker extends PathMaker {
 
-    ImageIcon makeMikamiYua() {
+    static ImageIcon makeMikamiYua(PartsMaker m) {
         String MikamiPath = makePath("mentos_tea.jpg");
-        ImageIcon MikaMiPhoto = new ImageIcon(getClass().getResource(MikamiPath));
+        ImageIcon MikaMiPhoto = new ImageIcon(m.getClass().getResource(MikamiPath));
         return (MikaMiPhoto);
     }
 

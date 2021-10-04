@@ -2,8 +2,10 @@ package com.github.MYBlocker;
 
 import javax.swing.*;
 
-public class ContentsMaker extends PartsMaker{
+public class ContentsMaker extends PartsMaker {
     static PartsMaker m = new PartsMaker();
+
+    static ImageIcon icon = makeMikamiYua(m);
 
     static JButton lUpperButton = makeUpperButton(m);
     static JButton lLowerButton = makeLowerButton(m);
